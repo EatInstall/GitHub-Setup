@@ -24,7 +24,7 @@ runs:
          echo "Compiling eat.py"
          pyinstaller --console --onefile --name "eat" "eat.py"
          echo "Compiling eat-install.py"
-         pyinstaller --console --name "eatinst" "eat-install.py"
+         pyinstaller --console --onefile --name "eatinst" "eat-install.py"
          echo "Installing..."
          sudo install ./eat /usr/bin/eat
          sudo install ./eatinst /usr/bin/eatinst
