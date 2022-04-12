@@ -26,9 +26,9 @@ runs:
          echo "Compiling eat-install.py"
          pyinstaller --console --name "eatinst" "eat-install.py"
          echo "Installing..."
-         sudo chmod +x eatinst
-         sudo chmod +x eat
-         sudo install eat /usr/bin/eat
-         sudo install eatinst /usr/bin/eatinst
+         sudo chmod +x ./eatinst
+         sudo chmod +x ./eat
+         sudo install ./eat /usr/bin/eat
+         sudo install ./eatinst /usr/bin/eatinst
      - run: echo "Eat has been installed."
        shell: bash
