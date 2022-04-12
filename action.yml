@@ -15,7 +15,8 @@ runs:
        shell: bash
      - run: gh repo clone EatInstall/Eat
        shell: bash
-     - run: |
+     - shell: bash
+       run: |
          cd Eat
          echo "Installing PyInstaller..."
          pip install pyinstaller
@@ -32,3 +33,4 @@ runs:
          sudo install eat /usr/bin/eat
          sudo install eatinst /usr/bin/eatinst
      - run: echo "Eat has been installed."
+       shell: bash
