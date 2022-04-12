@@ -7,7 +7,8 @@ branding:
 runs:
    using: composite
    steps:
-     - run: |
+     - shell:bash
+       run: |
         echo "Welcome! This script will install Eat. Please wait..."
         echo "This should take a few minutes."
      - run: git clone https://github.com/EatInstall/Eat.git
