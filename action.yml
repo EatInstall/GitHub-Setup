@@ -22,7 +22,7 @@ runs:
          sudo apt-get update
          sudo apt-get install upx -y
          echo "Compiling eat.py"
-         pyinstaller --console --name "eat" "eat.py"
+         pyinstaller --console --onefile --name "eat" "eat.py"
          echo "Compiling eat-install.py"
          pyinstaller --console --name "eatinst" "eat-install.py"
          echo "Installing..."
