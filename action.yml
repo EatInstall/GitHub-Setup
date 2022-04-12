@@ -7,13 +7,10 @@ branding:
 runs:
    using: composite
    steps:
-     - run: echo "Welcome to Eat Installer!"
-       shell: bash
-     - run: echo "You are running the official setup script written in"
-       shell: bash
-     - run: echo "shell-script. Please wait while we clone the main branch..."
-       shell: bash
-     - run: gh repo clone EatInstall/Eat
+     - run: |
+        echo "Welcome! This script will install Eat. Please wait..."
+        echo "This should take a few minutes."
+     - run: git clone https://github.com/EatInstall/Eat.git
        shell: bash
      - shell: bash
        run: |
