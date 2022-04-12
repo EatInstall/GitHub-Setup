@@ -5,5 +5,30 @@ branding:
   color: yellow
 
 runs:
-   using: docker
-   image: Dockerfile
+   using: composite
+   steps:
+     - run: echo "Welcome to Eat Installer!"
+       shell: bash
+     - run: echo "You are running the official setup script written in"
+       shell: bash
+     - run: echo "shell-script. Please wait while we clone the main branch..."
+       shell: bash
+     - run: gh repo clone EatInstall/Eat
+       shell: bash
+     - run: |
+         cd Eat
+         echo "Installing PyInstaller..."
+         pip install pyinstaller
+         echo "Installing UPX..."
+         sudo apt-get update
+         sudo apt-get install upx -y
+         echo "Compiling eat.py"
+         pyinstaller --console --name "eat" "eat.py"
+         echo "Compiling eat-install.py"
+         pyinstaller --console --name "eatinst" "eat-install.py"
+         echo "Installing..."
+         sudo chmod +x eatinst
+         sudo chmod +x eat
+         sudo install eat /usr/bin/eat
+         sudo install eatinst /usr/bin/eatinst
+     - run: echo "Eat has been installed."
