@@ -1,0 +1,9 @@
+name: "Setup Eat Package Manager"
+description: "Setup the Eat package manager for GNU/Linux"
+branding:
+  icon: terminal
+  color: yellow
+
+runs:
+   using: docker
+   image: Dockerfile
